@@ -140,7 +140,7 @@ _Please note that step 2 takes a lot of time and storage. This step creates the 
 This project is set up as part of the Master's course [Data Preparation & Workflow Management](https://dprep.hannesdatta.com/) at the [Department of Marketing](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing), [Tilburg University](https://www.tilburguniversity.edu/), the Netherlands.
 
 The project is implemented by team 9 which includes the members: 
-- Mistal Athaya Minantoputra (2153569)
+- Mitsal Athaya Minantoputra (2153569)
 - Amartya Iqra Akhlaqi (2099128)
 - Naomi Parmentier (2053479)
 - Niusha Amri (2149204)
