@@ -1,5 +1,6 @@
 # Yelp Review project
 The purpose of this project is to gain insight into online review systems and their implications for both consumers and businesses. 
+The final product of this project will be a paper written on the findings. 
 
 ## Motivation for the project
  Due to the evolving nature of consumer perceptions, businesses increasingly rely on online reputation as a
@@ -92,11 +93,11 @@ The data set has been downloaded via the Yelp Open Data Source. It contains a zi
 
 ## Repository Overview 
 
-Once more code will be created, a tree diagram that illustrates the repository structure will be added here.
+Once more code will be created, a diagram that illustrates the repository structure will be added here.
 - Repository
   - data
-    - Data_exploration.Rmd
-    - Creating_Dataset.Rmd
+    - load-packages.R
+    - download-data.R
   - reporting
     - report.Rmd
     - start_app.R
@@ -104,11 +105,11 @@ Once more code will be created, a tree diagram that illustrates the repository s
     - analysis
       - analysis.R
     - data-preparation 
-      - data-cleaning.R 
+      - data-cleaning.R
+      - Data_exploration.Rmd
   - .gitignore
   - README.md 
   - makefile
-
 
 
 ## Dependencies 
@@ -128,13 +129,19 @@ In order to run the code for this project the following packages should be insta
 
 ## Running Instructions 
 For this workflow to properly work, the following steps should be followed:
-1. If you want to recreate the final data set that will be used in this project, the file Creating_Dataset.Rmd should be run. Please note that this takes a lot of time and storage.
-2. In order to get to know the data set, please run the Data_exploration.Rmd file. 
-
-*Provide step-by-step instructions that have to be followed to run this workflow.*
+_Please note that step 2 takes a lot of time and storage. This step creates the final data set used for this project and can be skipped since the final data set will also be directly loaded in step 3._
+1. Run load-packages.R 
+2. Run download-data.R (optionally)
+3. Run final-data.R to load the data set that will be used for the project. 
+4. In order to get to know the data set, please run the Data_exploration.Rmd file. 
 
 ## About 
 
 This project is set up as part of the Master's course [Data Preparation & Workflow Management](https://dprep.hannesdatta.com/) at the [Department of Marketing](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing), [Tilburg University](https://www.tilburguniversity.edu/), the Netherlands.
 
-The project is implemented by team < x > members: < insert member details>
+The project is implemented by team 9 which includes the members: 
+- Mistal Athaya Minantoputra (2153569)
+- Amartya Iqra Akhlaqi (2099128)
+- Naomi Parmentier (2053479)
+- Niusha Amri (2149204)
+- Lan Vu (2055251)
