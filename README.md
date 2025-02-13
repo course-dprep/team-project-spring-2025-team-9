@@ -98,6 +98,7 @@ Once more code will be created, a diagram that illustrates the repository struct
   - data
     - load-packages.R
     - download-data.R
+    - final_data.R
   - reporting
     - report.Rmd
     - start_app.R
@@ -129,11 +130,12 @@ In order to run the code for this project the following packages should be insta
 
 ## Running Instructions 
 For this workflow to properly work, the following steps should be followed:
-_Please note that step 2 takes a lot of time and storage. This step creates the final data set used for this project and can be skipped since the final data set will also be directly loaded in step 3._
+_Please note that step 2 and 3 take a lot of time and storage. Thses steps create the final data set used for this project and can be skipped since the final data set will also be directly loaded in step 4._
 1. Run load-packages.R 
 2. Run download-data.R (optionally)
-3. Run final-data.R to load the data set that will be used for the project. 
-4. In order to get to know the data set, please run the Data-exploration.Rmd file. 
+3. Run data-cleaning.R (optionally)
+4. Run final-data.R to load the data set that will be used for the project. 
+5. In order to get to know the data set, please run the Data-exploration.Rmd file. 
 
 ## About 
 
