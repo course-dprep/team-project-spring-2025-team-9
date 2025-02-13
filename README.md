@@ -133,7 +133,7 @@ _Please note that step 2 takes a lot of time and storage. This step creates the 
 1. Run load-packages.R 
 2. Run download-data.R (optionally)
 3. Run final-data.R to load the data set that will be used for the project. 
-4. In order to get to know the data set, please run the Data_exploration.Rmd file. 
+4. In order to get to know the data set, please run the Data-exploration.Rmd file. 
 
 ## About 
 
