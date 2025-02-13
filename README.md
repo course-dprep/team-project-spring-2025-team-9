@@ -12,7 +12,39 @@ The purpose of this project is to gain insight into online review systems and th
  of Yelp data, this study aims to identify patterns that explain the extent to which online reviews impact
  business reputation.
 
-**Mention your research question**
+## Research question
+ Elite Yelp users are a select group of active contributors recognized by their high-quality reviews in the
+ platform. Their reviews often carry more credibility due to their experience, consistency, and potential
+ influence on other users. Businesses may perceive elite users as more discerning critics, potentially leading
+ to different rating behaviors compared to regular users. Understanding the impact of elite users on aver
+age business ratings is crucial for evaluating whether their reviews skew ratings positively or negatively,
+ influencing consumer perception and business success. This research can provide insights into rating biases,
+ user influence dynamics, and the overall trustworthiness of Yelp as a review platform. Therefore, after the
+ available deliverable of the relevant factors, we have formulated the following research question:
+ _How do elite users affect the average ratings a business gets?_
+
+ ### Sub questions
+_Does a business with ratings from elite users, have a higher average rating?_
+ Elite users are often perceived as experienced reviewers providing detailed and thoughtful feedback. Their
+ reviews may be weighted more heavily by other users and businesses, potentially influencing overall ratings.
+ If elite users have the tendency to be more critical, their presence could lower average ratings, whereas if they
+ are more generous or have higher standards for engagement, they might elevate them. Investigating whether
+ businesses with elite user reviews receive higher average ratings helps uncover the role of elite reviewers
+ in shaping consumer perception and business reputation, contributing to a deeper understanding of rating
+ dynamics on Yelp.
+
+ _To what extent do elite users with a larger fanbase influence the behavior and perceptions of other users?_
+ While elite users are already recognized as experienced and credible reviewers, there is noticeable variation in
+ their fanbase size. Some elite users attract significantly more followers than others, which raises the question
+ of whether a larger fanbase amplifies their influence on review ratings and consumer decision-making. By
+ analyzing Yelp data, we seek to determine whether the number of fans an elite reviewer has correlates with
+ greater influence, potentially affecting business ratings and shaping consumer trust in reviews.
+
+ _Is the outcome different when we only look at restaurants? Or when we only look at businesses that are not
+ restaurants?_
+ Yelp is mostly known for reviewing restaurants. As will be shown in the data exploration phase later, this
+ category is used most often. So that begs the question: is the outcome the same for businesses that are not
+ restaurants as it is for restaurants?
 
 ## Data
 For this project, we have chosen to work with the Yelp data set. The Yelp data set provides a rich and
@@ -27,7 +59,7 @@ The data set has been downloaded via the Yelp Open Data Source. It contains a zi
  A challenge encountered with the data set was their substantial size, which made them difficult to open on
  our laptops. To address this, we generated a smaller version containing only the necessary data, obtained
  as a random subset of the original data set. A detailed explanation of this process can be found in the
- source file "Creating Dataset.Rmd".
+ file "Creating_Dataset.Rmd" which is in the data folder in this repository.
 
  The created dataset which will be used for the rest of this project is called "yelp_data" and contains 32.650 rows each with a unique review.
  The data set has 14 columns, their meaning can be found in the following table:
@@ -60,13 +92,44 @@ The data set has been downloaded via the Yelp Open Data Source. It contains a zi
 
 ## Repository Overview 
 
-**Include a tree diagram that illustrates the repository structure*
+Once more code will be created, a tree diagram that illustrates the repository structure will be added here.
+- Repository
+  - data
+    - Data_exploration.Rmd
+    - Creating_Dataset.Rmd
+  - reporting
+    - report.Rmd
+    - start_app.R
+  - src
+    - analysis
+      - analysis.R
+    - data-preparation 
+      - data-cleaning.R 
+  - .gitignore
+  - README.md 
+  - makefile
+
+
 
 ## Dependencies 
 
-*Explain any tools or packages that need to be installed to run this workflow.*
+In order to run the code for this project the following packages should be installed and loaded:
+| Packages to be loaded |
+|:-------------------|
+|googledrive|
+|dplyr|
+|readr|
+|data.table|
+|httr|
+|ggplot2|
+|tidyverse|
+|tinytex|
+|knitr|
 
 ## Running Instructions 
+For this workflow to properly work, the following steps should be followed:
+1. If you want to recreate the final data set that will be used in this project, the file Creating_Dataset.Rmd should be run. Please note that this takes a lot of time and storage.
+2. In order to get to know the data set, please run the Data_exploration.Rmd file. 
 
 *Provide step-by-step instructions that have to be followed to run this workflow.*
 
