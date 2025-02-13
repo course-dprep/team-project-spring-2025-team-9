@@ -22,9 +22,31 @@ For this project, we have chosen to work with the Yelp data set. The Yelp data s
  user characteristics, such as elite status, enabling a detailed investigation into how different types of reviewers
  impact business ratings. 
 
-- What dataset(s) did you use? How was it obtained?
-- How many observations are there in the final dataset? 
-- Include a table of variable description/operstionalisation. 
+The data set has been downloaded via the Yelp Open Data Source. It contains a zip file of .json files which
+ were then converted to CSV files via Python code provided on GitHub.
+ A challenge encountered with the data set was their substantial size, which made them difficult to open on
+ our laptops. To address this, we generated a smaller version containing only the necessary data, obtained
+ as a random subset of the original data set. A detailed explanation of this process can be found in the
+ source file "Creating Dataset.Rmd".
+
+ The created dataset which will be used for the rest of this project is called "yelp_data" and contains 32.650 rows each with a unique review.
+ The data set has 14 columns, their meaning can be found in the following table:
+ | Variable | Data Type | Explanation |
+|:----------|:----------|:----------|
+| user_id| Character string | Unique, 22 character long ID that defines which user wrote the review. |
+| review_count_users | Numeric float | Number that represents the amount of reviews the user wrote in total. |
+| average_stars | Numeric float | Average rating of all reviews a user has given in the past. |
+| date | Date Time | Date and time the review was given. |
+| review_id | Character string | Unique, 22 character long ID that defines the review. |
+| business_id | Character string | Unique, 22 character long ID that defines the business for which the review was given. |
+| useful | Numeric integer | Number of useful votes a review has received. |
+| stars_users | Numeric integer | Star rating that was given by the user with the review. |
+| categories | Array of strings | Array of strings which includes the categories a business has. |
+| attributes | Object | Business attributes to logic values. Please note: some attributes might be objects of attributes to logic values again. | 
+| name | Character string | Business' name. |
+| stars_business | Numeric float | Averge stars a business got from the reviews they have received. The amount of stars are rounded to half-stars. |
+| review_count_business | Numeric integer | The amount of reviews a business has gotten in total. |
+| elite_binary | Binary | A binary telling whether the user has ever, at least once, had the elite status before (1) or not (0). |
 
 ## Method
 
