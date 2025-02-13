@@ -66,13 +66,13 @@ The data set has been downloaded via the Yelp Open Data Source. It contains a zi
  The data set has 14 columns, their meaning can be found in the following table:
  | Variable | Data Type | Explanation |
 |:----------|:----------|:----------|
+| fans | Numeric integer | The number of fans a user has. |
 | user_id| Character string | Unique, 22 character long ID that defines which user wrote the review. |
 | review_count_users | Numeric float | Number that represents the amount of reviews the user wrote in total. |
+| elite | Numeric integer | Long integer showing all the years a user was elite. If user never was elite it shows NA. |
 | average_stars | Numeric float | Average rating of all reviews a user has given in the past. |
-| date | Date Time | Date and time the review was given. |
 | review_id | Character string | Unique, 22 character long ID that defines the review. |
 | business_id | Character string | Unique, 22 character long ID that defines the business for which the review was given. |
-| useful | Numeric integer | Number of useful votes a review has received. |
 | stars_users | Numeric integer | Star rating that was given by the user with the review. |
 | categories | Array of strings | Array of strings which includes the categories a business has. |
 | attributes | Object | Business attributes to logic values. Please note: some attributes might be objects of attributes to logic values again. | 
