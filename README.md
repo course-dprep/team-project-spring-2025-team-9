@@ -21,11 +21,11 @@ The final product of this project will be a paper written on the findings.
 age business ratings is crucial for evaluating whether their reviews skew ratings positively or negatively,
  influencing consumer perception and business success. This research can provide insights into rating biases,
  user influence dynamics, and the overall trustworthiness of Yelp as a review platform. Therefore, after the
- available deliverable of the relevant factors, we have formulated the following research question:
+ available deliverable of the relevant factors, we have formulated the following research question: <br>
  _How do elite users affect the average ratings a business gets?_
 
  ### Sub questions
-_Does a business with ratings from elite users, have a higher average rating?_
+_Does a business with ratings from elite users, have a higher average rating?_ <br>
  Elite users are often perceived as experienced reviewers providing detailed and thoughtful feedback. Their
  reviews may be weighted more heavily by other users and businesses, potentially influencing overall ratings.
  If elite users have the tendency to be more critical, their presence could lower average ratings, whereas if they
@@ -34,7 +34,7 @@ _Does a business with ratings from elite users, have a higher average rating?_
  in shaping consumer perception and business reputation, contributing to a deeper understanding of rating
  dynamics on Yelp.
 
- _To what extent do elite users with a larger fanbase influence the behavior and perceptions of other users?_
+ _To what extent do elite users with a larger fanbase influence the behavior and perceptions of other users?_ <br>
  While elite users are already recognized as experienced and credible reviewers, there is noticeable variation in
  their fanbase size. Some elite users attract significantly more followers than others, which raises the question
  of whether a larger fanbase amplifies their influence on review ratings and consumer decision-making. By
@@ -42,7 +42,7 @@ _Does a business with ratings from elite users, have a higher average rating?_
  greater influence, potentially affecting business ratings and shaping consumer trust in reviews.
 
  _Is the outcome different when we only look at restaurants? Or when we only look at businesses that are not
- restaurants?_
+ restaurants?_ <br>
  Yelp is mostly known for reviewing restaurants. As will be shown in the data exploration phase later, this
  category is used most often. So that begs the question: is the outcome the same for businesses that are not
  restaurants as it is for restaurants?
