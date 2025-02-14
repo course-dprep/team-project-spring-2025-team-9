@@ -1,6 +1,8 @@
+# Yelp Local Businesses: How Elite Status Shapes Business Ratings
+
 ![yelp image](https://localmarketinginstitute.com/wp-content/uploads/2020/03/yelp-reviews.png)
 
-# Introduction
+## Introduction
  Yelp, founded in 2004, is a major online review platform that influences consumer decisions by allowing users to rate and review businesses. Research suggests that consumers value reviews under certain conditions and rely on cues like reviewer expertise, consistency, and overall rating trends to assess credibility [(Fogel & Zachariah, 2017)](https://doi.org/10.4067/S0718-18762017000100005). Additionally, reviews are perceived as more trustworthy when they align with majority opinions and come from experienced sources, such as Yelp Elite users, whose status signals credibility and influence (Lim & Van Der Heide, 2015). These findings highlight how Yelp's user-generated content shapes consumer trust and business reputations. Therefore, in this project we aim to analyze different types of user-generated content (reviews) and the different impact it has on businesses. 
 
 ## Motivation for the project
