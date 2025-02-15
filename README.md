@@ -71,10 +71,10 @@ The data set has 14 columns, their meaning can be found in the following table:
 #### Simple Linear Regression (T-Test)
 ![user to avg business ratings](https://drive.google.com/uc?export=view&id=1SFzeRuLNtZHIarnyrJirjkDnjRmVyWJg)
 
-__Independent Variables: Type of Yelp Users__
+__Independent Variables: Type of Yelp Users__ <br>
 The independent variable classifies Yelp reviews into two categories: Elite and Non-Elite users. Its primary purpose is to analyze the impact of reviewer status on the average rating a business gets. Specifically, we seek to determine whether elite reviewers consistently assign different ratings compared to non-elite reviewers.
 
-__Dependent Variable__
+__Dependent Variable__ <br>
 Our goal is to predict the average rating a business receives by analyzing the influence of elite status, fan count, and business category. This analysis aims to provide deeper insights into how these factors shape rating patterns and impact overall business ratings.
 
 In order to answer our research question, a simple linear regression (t-test) to analyze the relationship between Yelp user status (Elite vs. Non-Elite) and the average rating a business receives because the independent variable is categorical with two groups, while the dependent variable is continuous. Linear regression is the simplest model for modeling the regression function as a linear combination of predictors, as it has model parameters that are easily interpreted [(Su et al., 2012)](https://doi.org/10.1002/wics.1198). A t-test allows us to determine whether there is a statistically significant difference in average ratings between Elite and Non-Elite users, while simple linear regression quantifies the effect size and direction of this relationship. This method is appropriate as it provides a clear and interpretable measure of how user status influences business ratings. Additionally, it helps assess whether Elite users systematically give higher or lower ratings compared to Non-Elite users, offering insights into potential biases in review patterns.
@@ -86,7 +86,7 @@ The regression model is as follows: <br>
 
 ![fans to user to avg business rating](https://drive.google.com/uc?export=view&id=1IjrrB4Hq7TM9OZVrsGYV8jJmbtVUhU6C)
 
-__Pure Moderators: Distribution of Number of Fans of Yelp Users__
+__Pure Moderators: Distribution of Number of Fans of Yelp Users__ <br>
 The number of fans is divided into four quartiles: the 50th, 75th, 90th, and 95th percentiles. The interaction between Yelp user type (Elite vs. Non-Elite) and fan count will be examined to determine whether a user's influence on a business’s average rating varies based on their fanbase size. Specifically, we aim to assess whether the effect of being an elite or non-elite user on ratings differs depending on the number of fans. For instance, an elite user in the 95th percentile of fan count may rate a business differently than one in the 75th percentile.
 
 A multiple linear regression with an interaction term will be applied to investigate whether the number of fans an elite user has affects the relationship between user type and business ratings. Multivariate linear regression (MLR) is a method that simultaneously models the relationship between a set of independent variables and multiple dependent variables [(Ya Su et al., 2012)](https://doi.org/10.1109/TSMCB.2012.2195171). MLR allows us to assess both the direct effect of user status on ratings and the interaction effect of fan count, revealing whether elite users with a larger fan base rate businesses differently than those with fewer fans. Since fan count is a pure moderator divided into quartiles, this method helps determine if the strength or direction of the relationship changes based on a user's fan base. The hypothesis that the number of fans affects the impact of the user type on the average rating can be examined by inserting an interaction term of the form User Type x Number of Fans into the model [(Karaca-Mandic et al., 2012)](https://doi.org/10.1111/j.1475-6773.2011.01314.x). By incorporating moderation analysis, we can better understand whether elite users with a larger audience have a greater impact on business ratings.
@@ -98,7 +98,7 @@ The regression model is as follows: <br>
 
 ![category and user to avg business ratings](https://drive.google.com/uc?export=view&id=1oxKp0pesRKxoLD0T7dpOPmBEGksf_7Pz)
 
-__Quasi-Moderators: Category of Business__
+__Quasi-Moderators: Category of Business__ <br>
 We have categorized businesses into two groups: restaurants and non-restaurants. To assess whether the impact of Yelp user type (Elite vs. Non-Elite) on average business ratings vary by the category of the business, we will analyze their interaction. Specifically, we aim to determine whether elite and non-elite users tend to assign higher or lower ratings depending on whether a business is a restaurant or not. This quasi-moderator helps evaluate whether the business category influences the relationship between user type and average rating.
 
 In order to determine whether the impact of user type on business ratings varies between restaurants and non-restaurant businesses, a two-way ANOVA will be applied. This method is widely used in applied statistics due to its simplicity and robustness in handling parametric tests [(Luepsen, 2023)](https://doi.org/10.1080/03610918.2020.1869983). Given that two-way ANOVA effectively compares mean differences across categorical variables, it is ideal for analyzing how business category (restaurant vs. non-restaurant) moderates the relationship between Yelp user type (Elite vs. Non-Elite) and average business rating. Since the business category is a quasi-moderator, it may have both a direct effect on ratings and an interaction effect with user type. Two-way ANOVA allows us to test for these effects by examining whether Elite and Non-Elite users rate restaurants differently than non-restaurants. This method helps determine if the impact of reviewer status on ratings varies depending on the type of business being reviewed.
