@@ -25,18 +25,19 @@ However, the impact of the elite users may not be similar across all business ca
 __Does the relationship differ when analyzing only restaurants compared to non-restaurant businesses?__
 
 ## Data
+### Data Source
 From the Yelp database, we have extracted the business, user, and review data sets to answer the research questions.
 - Yelp Database: [Link](https://business.yelp.com/data/resources/open-dataset/)
 
 To convert the JSON files to CSV format, follow these steps:
-- Download or copy the conversion script from: [Link](https://gist.github.com/srosh2000/b6f10b8ec9c7b318acb706a9189d0f68).
-- Save the script as ```sh json_to_csv_converter.py ``` in your working directory.
+- Download or copy the conversion script from: [Link](https://gist.github.com/srosh2000/b6f10b8ec9c7b318acb706a9189d0f68)
+- Save the script as ```sh json_to_csv_converter.py ``` in your working directory
 - Open your terminal and run the script using the command:
 ```sh
  python json_to_csv_converter.py yelp_academic_dataset.json
 ```
 _(Replace yelp_academic_dataset.json with the actual path to your JSON file.)_
-- The script will generate a CSV file with the same name as your JSON file, saved in the same directory. For example, yelp_academic_dataset.json will be converted into yelp_academic_dataset.csv.
+- The script will generate a CSV file with the same name as your JSON file, saved in the same directory. For example, yelp_academic_dataset.json will be converted into yelp_academic_dataset.csv
 
 To simplify the process above, we have created an R script that automatically downloads all the required data sets for this research project. You only need to copy and run the code, and it will download the necessary files into your working directory. However, installing the _googledrive_ and _tidyverse_ packages are crucial to efficiently manage large files and ensure seamless data integration within the R environment.
 - Link to R script: [Link](https://github.com/course-dprep/team-project-spring-2025-team-9/blob/main/data/download-data.R)
@@ -48,6 +49,7 @@ Given the substantial size of the files and the need for a manageable dataset fo
 The created dataset which will be used for the rest of this project is called "yelp_data" and contains 32.650 rows each with a unique review.
 - Link to final data set: [Link](https://github.com/course-dprep/team-project-spring-2025-team-9/blob/main/data/final-data.R)
 
+### Variable Types
 The data set has 14 columns, their meaning can be found in the following table:
  | Variable | Data Type | Explanation |
 |:----------|:----------|:----------|
@@ -69,7 +71,7 @@ The data set has 14 columns, their meaning can be found in the following table:
 ## Research Method
 ### Conceptual Model
 #### Simple Linear Regression (T-Test)
-![user to avg business ratings](https://drive.google.com/uc?export=view&id=1SFzeRuLNtZHIarnyrJirjkDnjRmVyWJg)
+![user to avg business ratings](https://drive.google.com/uc?export=view&id=1kX2inCppY5BbwT-jk_NGCp7k61FXve9W)
 
 __Independent Variables: Type of Yelp Users__ <br>
 The independent variable classifies Yelp reviews into two categories: Elite and Non-Elite users. Its primary purpose is to analyze the impact of reviewer status on the average rating a business gets. Specifically, we seek to determine whether elite reviewers consistently assign different ratings compared to non-elite reviewers.
@@ -84,19 +86,19 @@ The regression model is as follows: <br>
 
 #### Moderated Multiple Linear Regression
 
-![fans to user to avg business rating](https://drive.google.com/uc?export=view&id=1IjrrB4Hq7TM9OZVrsGYV8jJmbtVUhU6C)
+![fans to user to avg business rating](https://drive.google.com/uc?export=view&id=1qCHTflcjWdWF05bS2scPNbFMl0UVpb4K)
 
 __Pure Moderators: Distribution of Number of Fans of Yelp Users__ <br>
 The number of fans is divided into four quartiles: the 50th, 75th, 90th, and 95th percentiles. The interaction between Yelp user type (Elite vs. Non-Elite) and fan count will be examined to determine whether a user's influence on a business’s average rating varies based on their fanbase size. Specifically, we aim to assess whether the effect of being an elite or non-elite user on ratings differs depending on the number of fans. For instance, an elite user in the 95th percentile of fan count may rate a business differently than one in the 75th percentile.
 
-A multiple linear regression with an interaction term will be applied to investigate whether the number of fans an elite user has affects the relationship between user type and business ratings. Multivariate linear regression (MLR) is a method that simultaneously models the relationship between a set of independent variables and multiple dependent variables [(Ya Su et al., 2012)](https://doi.org/10.1109/TSMCB.2012.2195171). MLR allows us to assess both the direct effect of user status on ratings and the interaction effect of fan count, revealing whether elite users with a larger fan base rate businesses differently than those with fewer fans. Since fan count is a pure moderator divided into quartiles, this method helps determine if the strength or direction of the relationship changes based on a user's fan base. The hypothesis that the number of fans affects the impact of the user type on the average rating can be examined by inserting an interaction term of the form User Type x Number of Fans into the model [(Karaca-Mandic et al., 2012)](https://doi.org/10.1111/j.1475-6773.2011.01314.x). By incorporating moderation analysis, we can better understand whether elite users with a larger audience have a greater impact on business ratings.
+A multiple linear regression with an interaction term will be applied to investigate whether the number of fans an elite user has affects the relationship between user type and business ratings. Multivariate linear regression (MLR) is a method that simultaneously models the relationship between a set of independent variables and multiple dependent variables [(Su et al., 2012)](https://doi.org/10.1109/TSMCB.2012.2195171). MLR allows us to assess both the direct effect of user status on ratings and the interaction effect of fan count, revealing whether elite users with a larger fan base rate businesses differently than those with fewer fans. Since fan count is a pure moderator divided into quartiles, this method helps determine if the strength or direction of the relationship changes based on a user's fan base. The hypothesis that the number of fans affects the impact of the user type on the average rating can be examined by inserting an interaction term of the form User Type x Number of Fans into the model [(Karaca-Mandic et al., 2012)](https://doi.org/10.1111/j.1475-6773.2011.01314.x). By incorporating moderation analysis, we can better understand whether elite users with a larger audience have a greater impact on business ratings.
 
 The regression model is as follows: <br>
 <p align=center>Average Rating = β₀ + β₁ * User Type + β₂ * Number of Fans + β₃ * (User Type * Number of Fans) + ε </p>
 
 #### Two-way ANOVA
 
-![category and user to avg business ratings](https://drive.google.com/uc?export=view&id=1oxKp0pesRKxoLD0T7dpOPmBEGksf_7Pz)
+![category and user to avg business ratings](https://drive.google.com/uc?export=view&id=1zBEWasuvUwzR0_aZ3uZ_nl4_eWDvj2u9)
 
 __Quasi-Moderators: Category of Business__ <br>
 We have categorized businesses into two groups: restaurants and non-restaurants. To assess whether the impact of Yelp user type (Elite vs. Non-Elite) on average business ratings vary by the category of the business, we will analyze their interaction. Specifically, we aim to determine whether elite and non-elite users tend to assign higher or lower ratings depending on whether a business is a restaurant or not. This quasi-moderator helps evaluate whether the business category influences the relationship between user type and average rating.
@@ -107,6 +109,23 @@ In order to determine whether the impact of user type on business ratings varies
 - Describe the gist of your findings (save the details for the final paper!)
 - How are the findings/end product of the project deployed?
 - Explain the relevance of these findings/product. 
+
+## Discussion
+### Relevance of Findings
+This research holds significance for multiple stakeholders, including consumers, business owners, online review platforms, and the academic community.  
+
+For __consumers__, the findings provide insights into how different types of reviewers shape business ratings, enabling them to make more informed purchasing decisions. By understanding the influence of elite and non-elite users, as well as the role of reviewer popularity, consumers can better assess the credibility of ratings and reviews before choosing a business. This knowledge allows them to navigate potential biases in online reviews, ensuring that their decisions are based on a more accurate representation of a business’s quality and service.  
+
+For __business owners__, this study highlights the factors that influence online reputation, helping them better understand how different types of reviewers affect consumer perceptions. By recognizing the impact of elite reviewers and highly followed users, businesses can refine their engagement strategies, respond more effectively to feedback, and leverage online reviews to build stronger customer relationships. Understanding these dynamics can also help businesses anticipate potential biases in ratings and adjust their marketing efforts accordingly.  
+
+For __online review platforms__, such as Yelp, can also benefit from this research by gaining deeper insights into how reviewer characteristics shape rating distributions. These findings can inform platform policies regarding elite status designations, ranking algorithms, and review visibility, ultimately improving the fairness and reliability of their rating systems. Platforms can use this research to enhance user trust and engagement, ensuring that reviews provide an accurate reflection of business quality.  
+
+For the __academic community__, this study contributes to the broader literature on online reviews, consumer purchasing behavior, and the influence of digital opinion leaders. By analyzing how elite status and reviewer influence impact business ratings, this research deepens the understanding of social dynamics in digital review platforms. It provides a foundation for future studies exploring trust in user-generated content, platform design, and the psychological factors that drive consumer decision-making. As online reviews continue to play a critical role in e-commerce and digital marketing, these findings offer valuable perspectives for researchers in marketing, behavioral economics, and information systems.
+
+### Future Analysis
+One limitation of this study is that it categorizes businesses into only two broad groups: restaurants and non-restaurants. While this approach provides a general understanding of how reviewer type influences ratings across different business types, it overlooks potential nuances within more specific industries. For example, customer expectations and rating behaviors may differ significantly between hotels, rental services, beauty salons, or fitness centers. A more granular analysis of distinct business categories could offer deeper insights into how elite and non-elite reviewers interact with different types of businesses.  
+
+Additionally, due to the immense size of the dataset, this study analyzes a reduced sample of 10,000 Yelp users rather than the full dataset. While this sample allows for computational efficiency and meaningful statistical analysis, it may not fully capture the broader trends present in the complete dataset. Future research could expand this work by utilizing the entire Yelp dataset, ensuring a more representative analysis and potentially uncovering additional patterns in reviewer behavior.
 
 ## Repository Overview 
 
@@ -164,3 +183,13 @@ The project is implemented by team 9 which includes the members:
 - Naomi Parmentier (2053479)
 - Niusha Amri (2149204)
 - Lan Vu (2055251)
+
+## References
+1. Fogel, J., & Zachariah, S. (2017). Intentions to use the Yelp review website and purchase behavior after reading reviews. _Journal of Theoretical and Applied Electronic Commerce Research, 12(1)_, 17–30. https://doi.org/10.4067/S0718-18762017000100005
+2. Karaca-Mandic, P., Norton, E. C., & Dowd, B. (2012). Interaction terms in nonlinear models. _Health Services Research, 47(1 Pt 1)_, 255–274. https://doi.org/10.1111/j.1475-6773.2011.01314.x
+3. Lim, Y., & Van Der Heide, B. (2015). Evaluating the wisdom of strangers: The perceived credibility of online consumer reviews on Yelp. _Journal of Computer-Mediated Communication, 20(1)_, 67–82. https://doi.org/10.1111/jcc4.12093
+4. Luca, M. (2016). Reviews, reputation, and revenue: The case of Yelp.com. _Harvard Business School NOM Unit Working Paper No. 12-016_. https://doi.org/10.2139/ssrn.1928601
+5. Luepsen, H. (2023). ANOVA with binary variables: The F-test and some alternatives. _Communications in Statistics - Simulation and Computation, 52(3)_, 745–769. https://doi.org/10.1080/03610918.2020.1869983
+6. Moe, W. W., & Trusov, M. (2011). The value of social dynamics in online product ratings forums. _Journal of Marketing Research, 48(3)_, 444-456. https://doi.org/10.1509/jmkr.48.3.444
+7. Su, X., Yan, X., & Tsai, C.-L. (2012). Linear regression. _Wiley Interdisciplinary Reviews: Computational Statistics, 4(3)_, 275–294. https://doi.org/10.1002/wics.1198
+8. Su, Y., Gao, X., Li, X., & Tao, D. (2012). Multivariate multilinear regression. _IEEE Transactions on Systems, Man, and Cybernetics, Part B (Cybernetics), 42(6)_. https://doi.org/10.1109/TSMCB.2012.2195171
