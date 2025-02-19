@@ -62,7 +62,7 @@ an elite user at lease once and the value '0' if the user has never been elite u
 
 final_dataset$elite_binary <- ifelse(final_dataset$elite != "", 1, 0) 
 
-
+test123
 "Lastly, we save our final data set as a new data set. Due to previous complications with loading 
 the data set, this data set will ease further research and will be the data set we refer to going 
 on forward. "
